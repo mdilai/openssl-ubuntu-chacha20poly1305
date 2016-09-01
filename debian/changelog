@@ -1,3 +1,9 @@
+openssl (1.0.1t-1ppa1) trusty-security; urgency=medium
+
+  * Added ChaCha20+Poly1305 cipher suites patch (https://github.com/h-yamamo/openssl-chacha20poly1305) for OpenSSL 1.0.1t
+
+ -- Maksym Dilai <admin@dproject.org.ua>  Thu, 01 Sep 2016 17:23:41 +0300
+
 openssl (1.0.1f-1ubuntu2.19) trusty-security; urgency=medium
 
   * SECURITY UPDATE: EVP_EncodeUpdate overflow
