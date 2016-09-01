@@ -157,10 +157,11 @@ TESTS = alltests
 
 MAKEFILE= Makefile
 
-MANDIR=$(OPENSSLDIR)/man
+MANDIR=/usr/share/man
 MAN1=1
 MAN3=3
-MANSUFFIX=
+MANSUFFIX=ssl
+MANSECTION=SSL
 HTMLSUFFIX=html
 HTMLDIR=$(OPENSSLDIR)/html
 SHELL=/bin/sh
@@ -533,7 +534,7 @@ install: all install_docs install_sw
 install_sw:
 	@$(PERL) $(TOP)/util/mkdir-p.pl $(INSTALL_PREFIX)$(INSTALLTOP)/bin \
 		$(INSTALL_PREFIX)$(INSTALLTOP)/$(LIBDIR) \
-		$(INSTALL_PREFIX)$(INSTALLTOP)/$(LIBDIR)/engines \
+		$(INSTALL_PREFIX)$(INSTALLTOP)/$(LIBDIR)/openssl-1.0.0/engines \
 		$(INSTALL_PREFIX)$(INSTALLTOP)/$(LIBDIR)/pkgconfig \
 		$(INSTALL_PREFIX)$(INSTALLTOP)/include/openssl \
 		$(INSTALL_PREFIX)$(OPENSSLDIR)/misc \
@@ -642,7 +643,7 @@ install_docs:
 		echo "installing man$$sec/$$fn.$${sec}$(MANSUFFIX)"; \
 		(cd `$(PERL) util/dirname.pl $$i`; \
 		sh -c "$$pod2man \
-			--section=$$sec --center=OpenSSL \
+			--section=$${sec}$(MANSECTION) --center=OpenSSL \
 			--release=$(VERSION) `basename $$i`") \
 			>  $(INSTALL_PREFIX)$(MANDIR)/man$$sec/$$fn.$${sec}$(MANSUFFIX); \
 		$(PERL) util/extract-names.pl < $$i | \
@@ -659,7 +660,7 @@ install_docs:
 		echo "installing man$$sec/$$fn.$${sec}$(MANSUFFIX)"; \
 		(cd `$(PERL) util/dirname.pl $$i`; \
 		sh -c "$$pod2man \
-			--section=$$sec --center=OpenSSL \
+			--section=$${sec}$(MANSECTION) --center=OpenSSL \
 			--release=$(VERSION) `basename $$i`") \
 			>  $(INSTALL_PREFIX)$(MANDIR)/man$$sec/$$fn.$${sec}$(MANSUFFIX); \
 		$(PERL) util/extract-names.pl < $$i | \
