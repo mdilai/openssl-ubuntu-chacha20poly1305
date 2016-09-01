@@ -1,4 +1,4 @@
-openssl (1.0.2h-1ppa1~xenial) xenial; urgency=medium
+openssl (1.0.2h-1ppa1~trusty) trusty; urgency=medium
 
   * Added ChaCha20+Poly1305 cipher suites patch (https://github.com/h-yamamo/openssl-chacha20poly1305) for OpenSSL 1.0.2h
 
