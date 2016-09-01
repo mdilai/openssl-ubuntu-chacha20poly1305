@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in `cat debian/patches/series`
+for i in `cat series`
 do
 printf "Patching ${i} \n"
 patch -p1 < debian/patches/${i}
